@@ -1,0 +1,18 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Form for adding an article{% endblock %}  
+
+{% block content %}
+   <div class="features">
+      <h1>News on the site</h1>
+      <form method="post">
+          {% csrf_token %}
+          {{ form.title }}<br>
+          {{ form.anons }}<br>
+          {{ form.full_text }}<br>
+          {{ form.date }}<br>
+          <span>{{ error }}</span>
+          <button class="btn btn-success" type="submit">Add the Article</button>
+      </form>
+   </div>
+{% endblock %}  

@@ -1,0 +1,18 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}{{ title }}{% endblock %}  
+
+{% block content %}
+   <div class="features">
+      <h1>News on the site</h1><br>
+
+
+      {% for el in news%}
+         <div class="Alert alert-warning">
+            <h3>{{ el.title }}</h3>
+            <p>{{ el.date }}</p>
+            <a href="{% url 'news-detail' el.id %}" class="btn btn-warning">Read Details</a>
+         </div>
+      {% endfor%}
+   </div>
+{% endblock %}  
